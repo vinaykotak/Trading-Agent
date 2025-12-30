@@ -1,0 +1,19 @@
+[Unit]
+Description=Run Trading Agent Daily
+Requires=trading-agent.service
+
+[Timer]
+# Run at 9:35 AM Eastern Time on weekdays (Mon-Fri)
+# Note: Adjust OnCalendar based on your server's timezone
+# If server is in UTC, use: OnCalendar=Mon-Fri 14:35:00 (9:35 AM ET = 14:35 UTC)
+# If server is in ET, use: OnCalendar=Mon-Fri 09:35:00
+OnCalendar=Mon-Fri 14:35:00
+
+# Run immediately if missed (e.g., server was down)
+Persistent=true
+
+# Randomize start time by up to 2 minutes to avoid exact timing
+# RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

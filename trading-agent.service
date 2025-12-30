@@ -1,0 +1,24 @@
+[Unit]
+Description=Alpaca Trading Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/root/TradingSimulation
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+EnvironmentFile=/root/TradingSimulation/.env
+ExecStart=/usr/bin/python3 /root/TradingSimulation/trading_agent_multi_stock.py
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=trading-agent
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

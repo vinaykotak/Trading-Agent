@@ -1,0 +1,19 @@
+# Core trading dependencies
+alpaca-trade-api>=3.0.0
+alpaca-py>=0.9.0
+pandas>=1.5.0
+numpy>=1.24.0
+
+# Visualization (for backtesting script)
+matplotlib>=3.5.0
+
+# Historical data (for backtesting script)
+yfinance>=0.2.0
+
+# Environment management (recommended)
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.1
