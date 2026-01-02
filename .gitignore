@@ -31,6 +31,7 @@ ENV/
 # Generated files
 trading_strategy.png
 *.csv
+daily_reports/
 
 # OS
 .DS_Store
